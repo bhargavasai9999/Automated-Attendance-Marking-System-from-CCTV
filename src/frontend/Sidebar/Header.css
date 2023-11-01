@@ -1,0 +1,18 @@
+/* Header.css */
+.header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  

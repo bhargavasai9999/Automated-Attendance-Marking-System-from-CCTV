@@ -1,0 +1,153 @@
+/* App.css */
+
+/* ... previous styles ... */
+
+.manage-student-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .student-container {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(109, 92, 92, 0.2);
+    flex: 1;
+    min-width: calc(25% - 20px);
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .student-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .icon-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .student-icon {
+    font-size: 36px;
+    color: #333;
+  }
+  
+.app {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    background: #983ea8;
+    color: #fff;
+    width: 250px;
+    padding: 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .sidebar-items {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-item {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar-item:hover {
+    background: #555;
+  }
+  
+  .sidebar-item.active {
+    background: #555;
+  }
+  
+  .content {
+    flex: 1;
+   
+  }
+  
+  .title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #d41a1a;
+  }
+  /* App.css */
+  
+  /* ... previous styles ... */
+  
+  .sidebar-item {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Add padding between the icon and text */
+  .sidebar-item svg {
+    margin-right: 10px; /* Adjust this value to control the spacing */
+  }
+  
+  /* ... other styles ... */
+  
+  /* App.css */
+
+/* ... previous styles ... */
+
+.manage-attendance-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .attendance-container {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    max-width: calc(50% - 20px);
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .attendance-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .icon-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .attendance-icon {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  /* ... other styles ... */
+  
+  
+  /* ... other styles ... */
+  

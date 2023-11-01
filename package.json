@@ -1,38 +1,120 @@
 {
+
   "name": "attendance",
+
   "version": "0.1.0",
+
   "private": true,
+
+  "proxy": "http://localhost:5000",
+
   "dependencies": {
+
     "@testing-library/jest-dom": "^5.17.0",
+
     "@testing-library/react": "^13.4.0",
+
     "@testing-library/user-event": "^13.5.0",
+
+    "axios": "^1.5.1",
+
+    "buffer": "^6.0.3",
+
+    "concurrently": "^8.2.2",
+
+    "cors": "^2.8.5",
+
+    "electron": "^27.0.2",
+
+    "fs": "^0.0.1-security",
+
+    "path": "^0.12.7",
+
+    "process": "^0.11.10",
+
     "react": "^18.2.0",
+
     "react-dom": "^18.2.0",
+
+    "react-icons": "^4.11.0",
+
+    "react-pro-sidebar": "^1.1.0-alpha.1",
+
+    "react-router-dom": "^6.17.0",
+
     "react-scripts": "5.0.1",
+
+    "react-sidebar": "^3.0.2",
+
+    "react-sidebar-menu": "^1.0.0",
+
+    "react-webcam": "^7.1.1",
+
     "web-vitals": "^2.1.4"
+
   },
+
   "scripts": {
+
     "start": "react-scripts start",
+
+    "start-backend": "cd backend &&cd env && flask run --no-debugger",
+
+    "dev": "concurrently \"npm run start\" \"npm run start-backend\"",
+
     "build": "react-scripts build",
+
     "test": "react-scripts test",
+
     "eject": "react-scripts eject"
+
   },
+
+  "browser": {
+
+    "fs": false,
+
+    "os": false,
+
+    "path": false
+
+  },
+
   "eslintConfig": {
+
     "extends": [
+
       "react-app",
+
       "react-app/jest"
+
     ]
+
   },
+
   "browserslist": {
+
     "production": [
+
       ">0.2%",
+
       "not dead",
+
       "not op_mini all"
+
     ],
+
     "development": [
+
       "last 1 chrome version",
+
       "last 1 firefox version",
+
       "last 1 safari version"
+
     ]
+
   }
+
 }
+

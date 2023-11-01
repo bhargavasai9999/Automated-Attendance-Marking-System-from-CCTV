@@ -1,0 +1,52 @@
+/* SearchData.css */
+
+.search-data-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset;
+  }
+  
+  .search-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .fetch-button {
+    padding: 10px 20px;
+    background: #0074d9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .fetch-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .search-results {
+    margin-top: 20px;
+    
+  }
+  
+  .results-heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .result-item {
+    padding: 10px;
+    background: #e9e8e8;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    
+  }
+  
+  /* ... additional styles ... */
+  

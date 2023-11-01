@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin: 20px;
+  text-shadow: 2px 2px 2px rgb(235, 234, 234);
+}
+
+.student-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.student {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 220px;
+  width: 180px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 3px 3px 8px  rgb(243, 241, 241);
+
+}
+
+
+.student-info {
+  flex-grow: 1;
+  font-weight: 500;
+  text-align: center;
+}
+
+.status-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.student-class{
+  margin-top:5px;
+  padding:0px;
+  font-weight: bold;
+
+}
+
+.present {
+  background-color: green;
+  color: white;
+}
+
+.absent {
+  background-color:red;
+  color: white;
+}
+.button{
+  border-radius: 20px;
+  height: 30px;
+  width: 80px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+}
+.student-img{
+  height:80px;
+  width: 80px;
+  border-radius:100%;
+  margin-bottom: 10px;
+}
