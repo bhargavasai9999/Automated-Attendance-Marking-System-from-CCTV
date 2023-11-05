@@ -522,7 +522,15 @@ def start_script():
         return Response("face recognisation started ... wait for pop up", mimetype='text/plain')
     elif script_process is not None:
         return Response("Face recognition is already running.", mimetype='text/plain')
-
+@app.route('/train_images', methods=['GET'])
+def train_images():
+    global script_process
+    if True:
+        script_process = subprocess.Popen(['python', 'video.py'])
+        
+        return Response("Taking training images ...wait for pop up", mimetype='text/plain')
+    else:
+        return Response("Internal Error", mimetype='text/plain')
 @app.route('/stop_script', methods=['GET'])
 def stop_script():
     global script_process

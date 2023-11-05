@@ -7,6 +7,8 @@ import useEffect from 'react'
 
 const StudentRegistrationForm = () => {
   const webcamRef = useRef(null);
+  const [webcamVisible, setWebcamVisible] = useState(true);
+
   const navigate=useNavigate()
 
   const [formData, setFormData] = useState({
@@ -38,6 +40,8 @@ const StudentRegistrationForm = () => {
         photoPreviewVisible: true,
       });
     }
+    setWebcamVisible(false); // Close the webcam after capturing
+
   };
 
   const handleRecaptureProfilePhoto = () => {
@@ -254,12 +258,12 @@ const StudentRegistrationForm = () => {
         </div>
         <div style={styles.formGroup} id="video-container">
           <label style={styles.label} htmlFor="profile_photo">Profile Photo:</label>
-          <Webcam
+          {webcamVisible && <Webcam
             audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             style={styles.webcam}
-          />
+          />}
           <button type="button" style={styles.button} onClick={handleCaptureProfilePhoto}>
             Capture Photo
           </button>
@@ -281,7 +285,8 @@ const StudentRegistrationForm = () => {
             value={formData.profile_photo || ''}
           />
         </div>
-        
+        <p>please click on capture train images for face recognition and wait for pop up </p>
+        <button style={styles.button} onClick={()=>axios.get("http://localhost:5000/train_images")}> capture train images</button>
         <div style={styles.formGroup}>
           <button type="submit" style={styles.button}>Register</button>
         </div>

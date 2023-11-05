@@ -104,7 +104,7 @@ load_data = torch.load('data.pt')
 embedding_list = load_data[0] 
 name_list = load_data[1] 
 def face_recog(video_source):
-    cam = cv2.VideoCapture(video_source) 
+    cam = cv2.VideoCapture(0)
     results=[]
     while True:
         ret, frame = cam.read()
@@ -133,7 +133,7 @@ def face_recog(video_source):
                     box = boxes[i]
                     original_frame = frame.copy() # storing copy of frame before drawing on it
 
-                    if min_dist<1.5:
+                    if min_dist<200:
 
                         if name not in results:
                             results.append(name)
