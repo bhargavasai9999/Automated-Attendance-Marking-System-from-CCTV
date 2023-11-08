@@ -41,7 +41,7 @@ const navigate=useNavigate()
       guardian_contact: '',
       profile_photo: null,
     })
-    axios.get("http://3.110.118.195/students/"+studentId).then(res=>{
+    axios.get("https://3.110.118.195/students/"+studentId).then(res=>{
         const data=res.data;
         
         if(res.data.message){
@@ -90,7 +90,7 @@ const navigate=useNavigate()
     const updatedData = { ...studentData, ...formData };
     setStudentData(formData);
     console.log(formData)
-    axios.put("http://3.110.118.195/update_student/"+formData.student_id,formData).then(res=>{
+    axios.put("https://3.110.118.195/update_student/"+formData.student_id,formData).then(res=>{
 
     }).catch(e=>{
         alert("Submit Valid Details may be student Id does not exist")

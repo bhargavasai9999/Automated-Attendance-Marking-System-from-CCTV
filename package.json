@@ -6,7 +6,7 @@
 
   "private": true,
 
-  "proxy": "http://3.110.118.195",
+  "proxy": "https://3.110.118.195",
 
   "dependencies": {
 

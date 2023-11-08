@@ -55,7 +55,7 @@ const StudentRegistrationForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    axios.post("http://3.110.118.195/addstudents",formData).then(res=>{
+    axios.post("https://3.110.118.195/addstudents",formData).then(res=>{
         if(res.data)
         alert(res.data)
     })
@@ -286,7 +286,7 @@ const StudentRegistrationForm = () => {
           />
         </div>
         <p>please click on capture train images for face recognition and wait for pop up </p>
-        <button style={styles.button} onClick={()=>axios.get("http://3.110.118.195/train_images")}> capture train images</button>
+        <button style={styles.button} onClick={()=>axios.get("https://3.110.118.195/train_images")}> capture train images</button>
         <div style={styles.formGroup}>
           <button type="submit" style={styles.button}>Register</button>
         </div>
