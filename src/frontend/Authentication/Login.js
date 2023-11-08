@@ -26,14 +26,13 @@ useEffect(()=>{
       // Successful login
       setLoginError('');
       alert('Login successful!');
-      const items=localStorage.setItem('login', true);
+      localStorage.setItem('login', true);
       if(localStorage.getItem('login')){
         navigate("/dashboard")
       }
 
     } else {
-      // Failed login
-      setLoginError('Invalid user ID or password');
+      setLoginError('Invalid userID or Password');
     }
   };
 

@@ -18,13 +18,12 @@ import TrainImages from './frontend/RegistrationForm/TrainImages';
 
 const  App = () => {
   const items=localStorage.getItem('login')
-  const navigate=useNavigate()
   return (
     <div>
       <Routes>
       <Route path='/login' exact element={<Login/>}/>
       <Route path='/*' element={<Navigate to='/login'/>}/>
-    <Route path='/tain' element={<TrainImages/>}/>
+    <Route path='/train' element={<TrainImages/>}/>
     
       <Route path='/dashboard'   element={<Sidebar/>}/>
 

@@ -7,7 +7,7 @@ const Camera = () => {
   const [editingCamera, setEditingCamera] = useState(null);
   useEffect(() => {
     
-  axios.get("http://localhost:5000/get_camera").then(res=>{
+  axios.get("http://3.110.118.195/get_camera").then(res=>{
     setCameras(res.data)
   })
   }, [])
@@ -16,7 +16,7 @@ const Camera = () => {
     if (newCamera.camera_id && newCamera.camera_name) {
         
      
-      axios.post("http://localhost:5000/add_camera",newCamera).then(res=>{
+      axios.post("http://3.110.118.195/add_camera",newCamera).then(res=>{
         alert(res.data.message)
     })
       setNewCamera({ camera_id: '', camera_name: '', camera_address: '' });
@@ -28,7 +28,7 @@ const Camera = () => {
       setCameras(cameras.map((camera) => {
         if (camera.camera_id === editingCamera.camera_id) {
             console.log(editingCamera)
-            axios.post('http://localhost:5000/update_camera',editingCamera).then(res=>alert(res.data.message))
+            axios.post('http://3.110.118.195/update_camera',editingCamera).then(res=>alert(res.data.message))
           return editingCamera;
         }
         return camera;
@@ -40,7 +40,7 @@ const Camera = () => {
   const deleteCamera = (id) => {
     
     setCameras(cameras.filter((camera) => camera.camera_id !== id));
-    axios.post("http://localhost:5000/delete_camera",{'camera_id':id}).then(res=>{
+    axios.post("http://3.110.118.195/delete_camera",{'camera_id':id}).then(res=>{
             alert(res.data.message)
         })
     if (editingCamera && editingCamera.camera_id === id) { 

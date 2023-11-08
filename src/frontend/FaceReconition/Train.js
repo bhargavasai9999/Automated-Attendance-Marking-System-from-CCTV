@@ -27,7 +27,7 @@ function Train() {
     setTrainingResponse('');
 
     // Make an API request to start model training
-    axios.get('http://localhost:5000/train_data')
+    axios.get('http://3.110.118.195/train_data')
       .then(response => {
         setIsTraining(false);
         setTrainingResponse(response.data);
@@ -44,7 +44,7 @@ function Train() {
     setRecognitionResponse('');
 
     // Make an API request to start face recognition
-    axios.get('http://localhost:5000/start_script')
+    axios.get('http://3.110.118.195/start_script')
       .then(response => {
         setIsRecognizing(true);
         setRecognitionResponse(response.data);
@@ -61,7 +61,7 @@ function Train() {
     setIsRecognizing(false);
     setRecognitionResponse('Recognition stopped.');
     // Make an API request to stop the recognition process on the server
-    axios.get('http://localhost:5000/stop_script')
+    axios.get('http://3.110.118.195/stop_script')
       .then(response => {
         // Handle the response when recognition is stopped (if needed)
       })
