@@ -20,11 +20,11 @@ processes = []
 
 def main():
     db_params = {
-        'dbname': 'student',
+        'dbname': 'postgres',
         'user': 'postgres',
-        'password': 'sting',
-        'host': 'localhost',
-        'port': '5432',
+        'password': 'postgres',
+        'host': 'database-1.c2beljlrxbik.ap-south-1.rds.amazonaws.com',
+        'port': '5430',
     }
     
     video_sources = connect_to_database(db_params)

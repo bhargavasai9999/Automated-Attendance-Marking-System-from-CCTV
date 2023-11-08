@@ -11,11 +11,11 @@ from psycopg2 import Error
 import datetime
 # initializing MTCNN and InceptionResnetV1 
 db_params = {
-    'dbname': 'student',
+    'dbname': 'postgres',
     'user': 'postgres',
-    'password': 'sting',
-    'host': 'localhost',
-    'port': '5432',
+    'password': 'postgres',
+    'host': 'database-1.c2beljlrxbik.ap-south-1.rds.amazonaws.com',
+    'port': '5430',
 }
 today_date = datetime.date.today()
 def connect_to_database():
