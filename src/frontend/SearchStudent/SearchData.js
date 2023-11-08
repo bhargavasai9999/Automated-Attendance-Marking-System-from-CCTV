@@ -44,6 +44,8 @@ const SearchData = () => {
 
   return (
     <div className="search-data-container">
+            <h3 style={{marginTop:'0px'}}>Search student details</h3>
+
       <input
         type="text"
         placeholder="Enter Student ID"

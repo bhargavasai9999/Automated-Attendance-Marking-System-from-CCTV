@@ -84,7 +84,7 @@ useEffect(()=>{
         </div>
       </div>
       <div className="content">
-        <div className="title">Automated Attendance Management System</div>
+        {/* <div className="title">Automated Attendance Management System</div> */}
         <div className="page-content">
         {currentPage==='manage-student' && <ManageStudent/>}
         {currentPage==='manage-attendance' && <ManageAttendance/>}

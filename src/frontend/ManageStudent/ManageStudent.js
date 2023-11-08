@@ -10,9 +10,9 @@ const ManageStudent = () => {
 
   const navigate=useNavigate()
   return (
-    
+    <div>
+      <h2>Manage Students Details</h2>
     <div className="manage-student-container">
-      
       
       <div className="student-container" onClick={()=>navigate('/manage-student/addstudent')}>
       
@@ -44,6 +44,7 @@ const ManageStudent = () => {
         </div>
       </div>
       
+    </div>
     </div>
     
   );

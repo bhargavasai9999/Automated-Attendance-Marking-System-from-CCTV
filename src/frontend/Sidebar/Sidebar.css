@@ -6,9 +6,9 @@
 }
 
 .sidebar {
-  background: #e0d01e;
-  color: #fff;
-  width: 250px;
+  background: linear-gradient(#4465ad, #74712b);
+  color: white;
+  width: 230px;
   padding: 20px;
 }
 
@@ -17,7 +17,7 @@
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 40px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
 }
 
 .sidebar-items {
@@ -48,6 +48,7 @@
 .content {
   flex: 1;
   padding: 20px;
+  background-color: #ffffff;
   scroll-behavior: smooth;
   overflow-y: scroll;
 }

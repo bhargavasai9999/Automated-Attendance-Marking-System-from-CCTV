@@ -9,6 +9,8 @@ const openMailApp = () => {
 };
 const ContactUs = () => {
   return (
+    <div>
+      <h2>Contact Details</h2>
     <div className="contact-us-container">
       <h2>G Pulla Reddy Engineering College</h2>
       <p>
@@ -20,6 +22,7 @@ const ContactUs = () => {
       <p>
         Email: <a className="contact-detail" href={`mailto:${email}`} onClick={openMailApp}>bhargavasai.rayalla@gmail.com</a>
       </p>
+    </div>
     </div>
   );
 };

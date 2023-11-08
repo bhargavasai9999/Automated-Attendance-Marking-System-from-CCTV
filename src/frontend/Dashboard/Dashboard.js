@@ -41,7 +41,7 @@ function Dashboard() {
 
   return (
     <div className="App">
-      <h2>Dashboard Today's Attendance</h2>
+      <h2>Today's Attendance</h2>
       <div className="student-list">
         {students.map((student) => (
           <div key={student.student_id} className="student">

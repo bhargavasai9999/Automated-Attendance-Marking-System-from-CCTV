@@ -11,6 +11,7 @@ const navigate=useNavigate()
   return (
     
     <div>
+      <h2>Manage Student's Attendance</h2>
     <div className="manage-attendance-container" >
       
 

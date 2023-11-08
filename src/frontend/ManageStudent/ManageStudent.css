@@ -41,20 +41,9 @@
     height: 100vh;
   }
   
-  .sidebar {
-    background: #983ea8;
-    color: #fff;
-    width: 250px;
-    padding: 20px;
-  }
+ 
   
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    font-family: 'Times New Roman', Times, serif;
-  }
+ 
   
   .sidebar-items {
     display: flex;
