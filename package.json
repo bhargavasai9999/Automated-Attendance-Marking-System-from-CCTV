@@ -5,6 +5,7 @@
   "version": "0.1.0",
 
   "private": true,
+ "homepage": "https://bhargavasai9999.github.io",
 
   "proxy": "http://3.110.118.195",
 
@@ -27,6 +28,8 @@
     "electron": "^27.0.2",
 
     "fs": "^0.0.1-security",
+
+    "gh-pages": "^6.0.0",
 
     "path": "^0.12.7",
 
@@ -66,7 +69,9 @@
 
     "test": "react-scripts test",
 
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
 
   },
 
