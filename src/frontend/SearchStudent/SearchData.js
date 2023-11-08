@@ -23,7 +23,7 @@ const SearchData = () => {
   const handleSearch = () => {
     setIsLoading(true);
 
-    axios.get("https://3.110.118.195/student_attendance/"+searchQuery).then(res=>{
+    axios.get("http://3.110.118.195/student_attendance/"+searchQuery).then(res=>{
       console.log(res.message)
     if(res.data.message || res.message){
       alert(res.data.message+" or check your internet connection")

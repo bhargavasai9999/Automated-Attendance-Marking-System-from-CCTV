@@ -6,7 +6,7 @@
 
   "private": true,
 
-  "proxy": "https://3.110.118.195",
+  "proxy": "http://3.110.118.195",
 
   "dependencies": {
 
@@ -16,7 +16,7 @@
 
     "@testing-library/user-event": "^13.5.0",
 
-    "axios": "^1.5.1",
+    "axios": "^1.6.0",
 
     "buffer": "^6.0.3",
 

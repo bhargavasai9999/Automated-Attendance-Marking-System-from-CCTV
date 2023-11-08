@@ -4,14 +4,14 @@ import './dashboard.css'
 function Dashboard() {
   const [students, setStudents] = useState([]);
 
-  useEffect(() => {
-    axios.get("https://3.110.118.195/student_details").then(res=>{
+  useEffect(() =>{
+    axios.get(`http://3.110.118.195/student_details`).then(res=>{
       setStudents(res.data);
       if(res.data.message){
         alert("server not connected")
       }
     })
-  }, []);
+  }, [2]);
 
 
   const toggleStatus = (studentId) => {
@@ -19,7 +19,7 @@ function Dashboard() {
     const updatedStatus = studentToUpdate.attendance_status === 'P' ? 'A' : 'P';
 
     // Send a PUT request to update the attendance status for the specific student
-    axios.put(`https://3.110.118.195/update_attendance_today`, {
+    axios.put(`http://3.110.118.195/update_attendance_today`, {
       student_id: studentId,
       attendance_status: updatedStatus,
     }).then(response => {

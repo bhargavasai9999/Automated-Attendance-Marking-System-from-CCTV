@@ -13,7 +13,7 @@ const navigate=useNavigate()
       setAnimationDone(true);
     }, 1000);
     localStorage.removeItem('login')
-    axios.get('https://3.110.118.195/stop_script')
+    axios.get('http://3.110.118.195/stop_script')
     .then(res => {
       
     })

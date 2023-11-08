@@ -36,7 +36,7 @@ const AttendanceReport = () => {
   };
 
   const fetchAttendanceData = () => {
-    axios.get(`https://3.110.118.195/attendance?class_name=${selectedClass}&date=${selectedDate}`)
+    axios.get(`http://3.110.118.195/attendance?class_name=${selectedClass}&date=${selectedDate}`)
       .then(response => {
         setAttendanceData(response.data);
        if(response.data.message)
@@ -71,7 +71,7 @@ const AttendanceReport = () => {
       updatedData.reason !== updatedAttendanceData[index].reason
     ) {
       console.log(updatedData)
-      axios.put(`https://3.110.118.195/attendance/${updatedData["1"]}`, updatedData)
+      axios.put(`http://3.110.118.195/attendance/${updatedData["1"]}`, updatedData)
         .then(response => {
           console.log('Attendance data updated successfully:', response.data);
         })
