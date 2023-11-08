@@ -31,7 +31,6 @@ const ManageStudent = () => {
             <FaEdit className="student-icon" />
           </div>
           <h2>Edit Student</h2>
-          {/* Add your edit student content here */}
         </div>
       </div>
 
