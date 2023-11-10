@@ -73,9 +73,11 @@ def check_attendance_for_today():
             return f"Error checking attendance for today: {e}"
     else:
         return "Error connecting to the database"
-mtcnn0 = MTCNN(image_size=160, margin=0, keep_all=False, min_face_size=40) # keep_all=False
-mtcnn = MTCNN(image_size=160, margin=0, keep_all=True, min_face_size=40) # keep_all=True
-resnet = InceptionResnetV1(pretrained='vggface2',classify=True,num_classes=3)
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+mtcnn = MTCNN(image_size=160, margin=0, keep_all=True, min_face_size=20,device=device)
+dataset = datasets.ImageFolder('faces_cropped') # photos folder path 
+idx_to_class = {i:c for c,i in dataset.class_to_idx.items()}
+resnet = InceptionResnetV1(pretrained='vggface2',classify=True,num_classes=len(dataset.class_to_idx)).to(device)
 resnet.load_state_dict(torch.load('face_recognition_model.pth'))
 resnet.eval()
 dataset = datasets.ImageFolder('faces_cropped') # photos folder path 
@@ -102,9 +104,9 @@ video_sources=address()
 # torch.save(data, 'data.pt') # saving data.pt file
 load_data = torch.load('data.pt') 
 embedding_list = load_data[0] 
-name_list = load_data[1] 
+name_list = load_data[1]
 def face_recog(video_source):
-    cam = cv2.VideoCapture(0)
+    cam = cv2.VideoCapture("rtsp://admin:admin@192.168.0.103:1935")
     results=[]
     while True:
         ret, frame = cam.read()
@@ -119,7 +121,7 @@ def face_recog(video_source):
 
             for i, prob in enumerate(prob_list):
                 if prob>0.90:
-                    emb = resnet(img_cropped_list[i].unsqueeze(0)).detach() 
+                    emb = resnet(img_cropped_list[i].to(device).unsqueeze(0)).detach() 
 
                     dist_list = [] # list of matched distances, minimum distance is used to identify the person
                     for idx, emb_db in enumerate(embedding_list):
@@ -128,7 +130,7 @@ def face_recog(video_source):
 
                     min_dist = min(dist_list) # get minumum dist value
                     min_dist_idx = dist_list.index(min_dist) # get minumum dist index
-                    name = name_list[min_dist_idx] # get name corrosponding to minimum dist
+                    name = name_list[min_dist_idx]
                     print(name,min_dist)
                     box = boxes[i]
                     original_frame = frame.copy() # storing copy of frame before drawing on it

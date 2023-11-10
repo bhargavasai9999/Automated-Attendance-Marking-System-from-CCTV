@@ -544,9 +544,8 @@ def stop_script():
 def face():
     # Execute the Python script when the button is clicked
     Response("file opened")
+    
     subprocess.Popen(['python', 'finetuned_model.py'])
-
-    subprocess.Popen(['python', 'Face_training.py'])
     return "Training model is running...wait for a while and procedd to recognition"
 @app.route('/add_camera', methods=['POST'])
 def add_camera():

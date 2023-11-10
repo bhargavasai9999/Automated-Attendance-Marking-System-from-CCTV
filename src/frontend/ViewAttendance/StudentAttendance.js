@@ -21,7 +21,7 @@ const StudentAttendance = () => {
 
   const handleFetchAttendanceData = () => {
     // Make an API request to fetch attendance data for the specified student ID
-    axios.get(`http://3.110.118.195/attendance/${studentId}`)
+    axios.get(`http://localhost:5000/attendance/${studentId}`)
       .then(response => {
         setAttendanceData(response.data);
         console.log(response)
@@ -44,7 +44,7 @@ const StudentAttendance = () => {
   const handleUpdate = () => {
     console.log(editedData)
     // Make an API request to update the attendance record
-    axios.put(`http://3.110.118.195/attendance/${studentId}`, editedData)
+    axios.put(`http://localhost:5000/attendance/${studentId}`, editedData)
       .then(response => {
         console.log('Attendance record updated successfully:', response.data);
         setIsEditing(false);

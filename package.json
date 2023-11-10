@@ -7,7 +7,7 @@
   "private": true,
  "homepage": "https://bhargavasai9999.github.io",
 
-  "proxy": "http://3.110.118.195",
+  "proxy": "http://localhost:5000",
 
   "dependencies": {
 

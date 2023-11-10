@@ -3,12 +3,11 @@ import os
 import time
 import keyboard
 import shutil
-
+import os
 # Set the path to the desktop
-desktop_path = r"C:\attendance\backend\env\faces"
-
+desktop_path=os.path.join('faces')
 # Initialize the webcam
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 # Create an OpenCV window to display the frame
 cv2.namedWindow("Capture Images", cv2.WINDOW_NORMAL)
