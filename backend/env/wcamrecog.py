@@ -106,7 +106,7 @@ load_data = torch.load('data.pt')
 embedding_list = load_data[0] 
 name_list = load_data[1]
 def face_recog(video_source):
-    cam = cv2.VideoCapture("rtsp://admin:admin@192.168.0.103:1935")
+    cam = cv2.VideoCapture("rtsp://admin:admin@192.168.0.108:1935")
     results=[]
     while True:
         ret, frame = cam.read()
@@ -121,17 +121,17 @@ def face_recog(video_source):
 
             for i, prob in enumerate(prob_list):
                 if prob>0.90:
+                    print(type(img_cropped_list[i]))
                     emb = resnet(img_cropped_list[i].to(device).unsqueeze(0)).detach() 
 
-                    dist_list = [] # list of matched distances, minimum distance is used to identify the person
-                    for idx, emb_db in enumerate(embedding_list):
-                        dist = torch.dist(emb,emb_db).item()
-                        dist_list.append(dist)
-
-                    min_dist = min(dist_list) # get minumum dist value
-                    min_dist_idx = dist_list.index(min_dist) # get minumum dist index
-                    name = name_list[min_dist_idx]
-                    print(name,min_dist)
+                    dist = torch.cdist(emb.unsqueeze(0), torch.stack(embedding_list)).squeeze()
+                    min_dist, min_dist_idx = torch.min(dist, dim=0)
+                    if min_dist < 500: 
+                        name = name_list[min_dist_idx.item()]
+                        print(name, min_dist.item())
+                    else:
+                        name = "Unknown"
+                        print(name)
                     box = boxes[i]
                     original_frame = frame.copy() # storing copy of frame before drawing on it
 
