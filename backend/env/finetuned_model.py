@@ -11,7 +11,7 @@ from flask import Flask, Response
 
 data_dir = 'faces'
 batch_size = 50
-epochs =10
+epochs = 40
 workers = 0 if os.name == 'nt' else 8
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 print('Running on device: {}'.format(device))
