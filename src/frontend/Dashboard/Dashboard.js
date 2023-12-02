@@ -5,10 +5,11 @@ function Dashboard() {
   const [students, setStudents] = useState([]);
 
   useEffect(() =>{
-    axios.get(`http://3.110.118.195/student_details`).then(res=>{
+    axios.get(`http://localhost:5000/student_details`).then(res=>{
       setStudents(res.data);
+      console.log(res)
       if(res.data.message){
-        alert("server not connected")
+        // alert("It looks like today Holiday")
       }
     })
   }, [2]);
@@ -19,7 +20,7 @@ function Dashboard() {
     const updatedStatus = studentToUpdate.attendance_status === 'P' ? 'A' : 'P';
 
     // Send a PUT request to update the attendance status for the specific student
-    axios.put(`http://3.110.118.195/update_attendance_today`, {
+    axios.put(`http://localhost:5000/update_attendance_today`, {
       student_id: studentId,
       attendance_status: updatedStatus,
     }).then(response => {
@@ -43,7 +44,7 @@ function Dashboard() {
     <div className="App">
       <h2>Today's Attendance</h2>
       <div className="student-list">
-        {students.map((student) => (
+        {(students.length>0) ?( students.map((student) => (
           <div key={student.student_id} className="student">
           <img src={student.image} className='student-img'/>
             <div className="student-info container">
@@ -60,7 +61,7 @@ function Dashboard() {
               {student.attendance_status === 'P' ? 'Present' : 'Absent'}
             </button>
           </div>
-        ))}
+        ))):(<h2 style={{textAlign:'center',color:'blueviolet'}}>It looks like holiday today... "If not run face recognition"</h2>)}
       </div>
     </div>
   );

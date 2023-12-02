@@ -7,17 +7,17 @@
   "private": true,
  "homepage": "https://bhargavasai9999.github.io",
 
-  "proxy": "http://3.110.118.195",
+  "proxy": "http://localhost:5000",
 
   "dependencies": {
 
-    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/jest-dom": "^6.1.4",
 
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^14.1.2",
 
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/user-event": "^14.5.1",
 
-    "axios": "^1.6.0",
+    "axios": "^1.6.2",
 
     "buffer": "^6.0.3",
 
@@ -25,11 +25,11 @@
 
     "cors": "^2.8.5",
 
-    "electron": "^27.0.2",
+    "electron": "^27.1.0",
 
     "fs": "^0.0.1-security",
 
-    "gh-pages": "^6.0.0",
+    "gh-pages": "^6.1.0",
 
     "path": "^0.12.7",
 
@@ -39,11 +39,11 @@
 
     "react-dom": "^18.2.0",
 
-    "react-icons": "^4.11.0",
+    "react-icons": "^4.12.0",
 
     "react-pro-sidebar": "^1.1.0-alpha.1",
 
-    "react-router-dom": "^6.17.0",
+    "react-router-dom": "^6.19.0",
 
     "react-scripts": "5.0.1",
 
@@ -51,9 +51,9 @@
 
     "react-sidebar-menu": "^1.0.0",
 
-    "react-webcam": "^7.1.1",
+    "react-webcam": "^7.2.0",
 
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^3.5.0"
 
   },
 

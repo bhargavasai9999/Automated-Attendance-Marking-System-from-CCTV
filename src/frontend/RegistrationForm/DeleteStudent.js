@@ -9,7 +9,7 @@ const DeleteStudent = () => {
 
   useEffect(() => {
     if (studentId) {
-      axios.get(`http://3.110.118.195/students/${studentId}`)
+      axios.get(`http://localhost:5000/students/${studentId}`)
         .then(response => {
           setStudentData(response.data);
         })
@@ -25,7 +25,7 @@ const DeleteStudent = () => {
 
   const handleDeleteStudent = () => {
     if (studentData && studentData.student_id) {
-      axios.delete(`http://3.110.118.195/students/${studentData.student_id}`)
+      axios.delete(`http://localhost:5000/students/${studentData.student_id}`)
         .then(response => {
           alert('Student deleted successfully');
           
