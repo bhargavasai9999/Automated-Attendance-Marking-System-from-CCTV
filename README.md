@@ -48,7 +48,7 @@ Use the interface for attendance marking.
 
 # Deployment link
 Open to view website http://65.1.220.178:3000.
--- Login
+# Login
 - username: **admin**
 - password: **admin**
 
