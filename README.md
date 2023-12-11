@@ -1,4 +1,4 @@
-# Automated Attendance Marking System\
+# Automated Attendance Marking System
 # Objective
 The main goal of our Automated Attendance System is to quickly and smoothly recognize people's faces in real-time and mark their attendance instantly. This means that as soon as someone walks in front of the camera, the system recognizes them and records their attendance without any delays. We want the system to work seamlessly, updating attendance information live on the screen so that teachers or event organizers can see who's present at any given moment. We're making sure the system reacts right away to changes, handles various situations like different lighting, and can manage a large number of people without slowing down. Our aim is to create a user-friendly solution that makes attendance tracking easy and efficient, especially in fast-paced environments like classrooms or events where time is of the essence.
 # Overview
