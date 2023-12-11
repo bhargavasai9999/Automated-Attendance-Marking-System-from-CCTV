@@ -3,26 +3,25 @@
   This project is an automated attendance marking system with a React frontend and Flask API backend. Face recognition is implemented using facenet-pytorch, YOLOv8, Ultralytics, OpenCV, etc.
 
 # Features
-# User-friendly Interface:
+- User-friendly Interface:
 React-based frontend with an intuitive design.
-# Automated Face Recognition: 
+- Automated Face Recognition: 
 Utilizing facenet-pytorch, YOLOv8, Ultralytics, OpenCV.
-# Secure Data Storage:
+- Secure Data Storage:
 PostgreSQL for storing attendance records securely.
 
-## Frontend (React, HTML, CSS, JavaScript)
-# Install dependencies:
-clone the repository
-npm install
-## Backend (Flask API, PostgreSQL)
+# Frontend (React, HTML, CSS, JavaScript):
+Install dependencies:
+- clone the repository
+- npm install
+# Backend (Flask API, PostgreSQL)
 Navigate to the backend directory:
-# For Windows
-python -m venv env
-.\env\Scripts\activate
-# For macOS/Linux
-python3 -m venv env
-source env/bin/activate
-
+- For Windows
+- python -m venv env
+- .\env\Scripts\activate
+- For macOS/Linux
+- python3 -m venv env
+- source env/bin/activate
 - pip install -r requirements.txt
 - Configure the database connection in config.py.
 ## Run the Flask application:
