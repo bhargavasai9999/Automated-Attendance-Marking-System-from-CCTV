@@ -29,7 +29,7 @@ today_date = datetime.date.today()
 load_data = torch.load('data.pt')
 embedding_list = load_data[0]
 name_list = load_data[1]
-results=[]
+results = []  # Declaration of the results array
 
 def beep():
     subprocess.call(["afplay", "/System/Library/Sounds/Glass.aiff"])
@@ -65,11 +65,13 @@ def detect_objects(video_source):
                 emb = resnet(image).squeeze()
                 dist = torch.cdist(emb.unsqueeze(0), torch.stack(embedding_list)).squeeze()
                 min_dist, min_dist_idx = torch.min(dist, dim=0)
+                print(min_dist.item())
                 if min_dist < 500:
                     name = name_list[min_dist_idx.item()]
-                    print(name, min_dist.item())
-                    if name not in results:
-                        results.append(name)
+                    print(min_dist.item(),name)
+
+                    if name not in results:  # Check if person is not already captured
+                        results.append(name)  # Add person to results array
                         conn=connect_to_database()
                         if conn:
                             cursor = conn.cursor()
@@ -84,8 +86,8 @@ def detect_objects(video_source):
                             conn.commit()
                             conn.close()
                             print(name,"captured")
-                        else:
-                            print("already captured")
+                    else:
+                        print(name,"already captured")
                 else:
                     name = "Unknown"
                     print(name)
@@ -134,9 +136,10 @@ def connect_to_database():
     db_params = {
         'dbname': 'postgres',
         'user': 'postgres',
-        'password': 'postgres',
-        'host': 'database-1.c2beljlrxbik.ap-south-1.rds.amazonaws.com',
-        'port': '5430',
+        'password': 'Sai@12077',
+        'host': 'attendance.postgres.database.azure.com',
+        'port': '5432',
+        
     }
     try:
         conn = psycopg2.connect(**db_params)
@@ -201,7 +204,7 @@ def check_attendance_for_today():
 
 
 def main():
-    video_sources = ["0"]
+    video_sources =address()
     check_attendance_for_today()
     # train_data()
     processes = []
@@ -212,6 +215,7 @@ def main():
     for p in processes:
         if not p.is_alive():
             p.join()
+            
             processes.remove(p)
 
 

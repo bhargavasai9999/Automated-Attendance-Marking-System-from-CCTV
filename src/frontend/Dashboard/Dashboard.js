@@ -7,11 +7,14 @@ function Dashboard() {
   useEffect(() =>{
     axios.get(`http://localhost:5000/student_details`).then(res=>{
       setStudents(res.data);
+      console.log(res.data)
       if(res.data.message){
-        alert("server not connected")
+        alert(res.data.message)
       }
+   
     })
-  }, [2]);
+  }, []);
+
 
 
   const toggleStatus = (studentId) => {
@@ -43,7 +46,7 @@ function Dashboard() {
     <div className="App">
       <h2>Today's Attendance</h2>
       <div className="student-list">
-        {students.map((student) => (
+        {students.length>0 ? students.map((student) => (
           <div key={student.student_id} className="student">
           <img src={student.image} className='student-img'/>
             <div className="student-info container">
@@ -60,7 +63,7 @@ function Dashboard() {
               {student.attendance_status === 'P' ? 'Present' : 'Absent'}
             </button>
           </div>
-        ))}
+        )) :<div> <br/><h1 className="student-class text-info">Seems like hoiliday today</h1></div>}
       </div>
     </div>
   );

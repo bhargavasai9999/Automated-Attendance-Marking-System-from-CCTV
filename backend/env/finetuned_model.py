@@ -5,7 +5,7 @@ from torch import optim
 from torch.optim.lr_scheduler import MultiStepLR
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import datasets, transforms
-import numpy as np
+import numpy as np 
 import os
 from flask import Flask, Response
 

@@ -36,8 +36,5 @@ def train_data():
         torch.save(data, 'data.pt')
         return ("model trained and saved in local")
 
-        
-        
-        
 train_data()
 gc.collect()

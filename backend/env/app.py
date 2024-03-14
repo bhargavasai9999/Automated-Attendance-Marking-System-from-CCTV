@@ -13,9 +13,9 @@ script_process=None
 db_params = {
     'dbname': 'postgres',
     'user': 'postgres',
-    'password': 'postgres',
-    'host': 'database-1.c2beljlrxbik.ap-south-1.rds.amazonaws.com',
-    'port': '5430',
+    'password': 'Sai@12077',
+    'host': 'attendance.postgres.database.azure.com',
+    'port': '5432',
 }
 
 def connect_to_database():
@@ -25,7 +25,9 @@ def connect_to_database():
     except Error as e:
         print(f"Error connecting to the database: {e}")
         return None
-
+@app.route('/',methods=['GET'])
+def check_server():
+    return "server is running"
 @app.route('/addstudents', methods=['POST'])
 def students():
     if request.method == 'POST':
@@ -517,7 +519,7 @@ def update_attendance():
 def start_script():
     global script_process
     if script_process is None:
-        script_process = subprocess.Popen(['python', 'wcamrecog.py'])
+        script_process = subprocess.Popen(['python', 'newyolo.py'])
         
         return Response("face recognisation started ... wait for pop up", mimetype='text/plain')
     elif script_process is not None:
@@ -579,12 +581,6 @@ def add_camera():
 
     except Exception as e:
         return jsonify({'message': str(e)})
-
-
-
-# PostgreSQL database configuration
-
-
 
 @app.route('/delete_camera', methods=['POST'])
 def delete_camera():

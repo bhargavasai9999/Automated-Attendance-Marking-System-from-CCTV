@@ -13,9 +13,9 @@ import datetime
 db_params = {
     'dbname': 'postgres',
     'user': 'postgres',
-    'password': 'postgres',
-    'host': 'database-1.c2beljlrxbik.ap-south-1.rds.amazonaws.com',
-    'port': '5430',
+    'password': 'Sai@12077',
+    'host': 'attendance.postgres.database.azure.com',
+    'port': '5432',
 }
 today_date = datetime.date.today()
 def connect_to_database():
@@ -106,7 +106,7 @@ load_data = torch.load('data.pt')
 embedding_list = load_data[0] 
 name_list = load_data[1]
 def face_recog(video_source):
-    cam = cv2.VideoCapture("rtsp://admin:admin@192.168.0.108:1935")
+    cam = cv2.VideoCapture(0)
     results=[]
     while True:
         ret, frame = cam.read()
@@ -135,7 +135,7 @@ def face_recog(video_source):
                     box = boxes[i]
                     original_frame = frame.copy() # storing copy of frame before drawing on it
 
-                    if min_dist<200:
+                    if min_dist<310:
 
                         if name not in results:
                             results.append(name)
